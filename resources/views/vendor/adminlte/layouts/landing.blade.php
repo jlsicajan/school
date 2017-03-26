@@ -45,7 +45,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><b>adminlte-laravel</b></a>
+                <a class="navbar-brand" href="#"><b>San Bernardino</b></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -57,7 +57,6 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">{{ trans('adminlte_lang::message.login') }}</a></li>
-                        <li><a href="{{ url('/register') }}">{{ trans('adminlte_lang::message.register') }}</a></li>
                     @else
                         <li><a href="/home">{{ Auth::user()->name }}</a></li>
                     @endif
@@ -72,25 +71,21 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             <div class="container">
                 <div class="row centered">
                     <div class="col-lg-12">
-                        <h1>Acacha <b><a href="https://github.com/acacha/adminlte-laravel">adminlte-laravel</a></b></h1>
-                        <h3>A <a href="https://laravel.com/">Laravel</a> {{ trans('adminlte_lang::message.laravelpackage') }}
-                            scaffolding/boilerplate {{ trans('adminlte_lang::message.to') }} <a href="https://almsaeedstudio.com/preview">AdminLTE</a> {{ trans('adminlte_lang::message.templatewith') }}
-                            <a href="http://getbootstrap.com/">Bootstrap</a> 3.0 {{ trans('adminlte_lang::message.and') }} <a href="http://blacktie.co/demo/pratt/">Pratt</a> Landing page</h3>
-                        <h3><a href="{{ url('/register') }}" class="btn btn-lg btn-success">{{ trans('adminlte_lang::message.gedstarted') }}</a></h3>
+                        <h3>Instituto Prevocacional Mixto <b>San Bernardino</b></h3>
                     </div>
                     <div class="col-lg-2">
-                        <h5>{{ trans('adminlte_lang::message.amazing') }}</h5>
-                        <p>{{ trans('adminlte_lang::message.basedadminlte') }}</p>
+                        <h5>{{ trans('message.amazing') }}</h5>
+                        <p>{{ trans('message.basedadminlte') }}</p>
                         <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/img/arrow1.png') }}">
                     </div>
-                    <div class="col-lg-8">
-                        <img class="img-responsive" src="{{ asset('/img/app-bg.png') }}" alt="">
+                    <div class="col-lg-8 text-center">
+                        <img class="img-responsive" src="{{ asset('/img/img_school/general_image.jpg') }}" alt="">
                     </div>
                     <div class="col-lg-2">
                         <br>
                         <img class="hidden-xs hidden-sm hidden-md" src="{{ asset('/img/arrow2.png') }}">
-                        <h5>{{ trans('adminlte_lang::message.awesomepackaged') }}</h5>
-                        <p>... {{ trans('adminlte_lang::message.by') }} <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a> {{ trans('adminlte_lang::message.at') }} <a href="http://acacha.org">acacha.org</a> {{ trans('adminlte_lang::message.readytouse') }}</p>
+                        <h5>{{ trans('message.amazing') }}</h5>
+                        <p>{{ trans('message.basedadminlte') }}</p>
                     </div>
                 </div>
             </div> <!--/ .container -->
@@ -102,7 +97,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div id="intro">
             <div class="container">
                 <div class="row centered">
-                    <h1>{{ trans('adminlte_lang::message.designed') }}</h1>
+                    <h1>{{ trans('message.designed') }}</h1>
                     <br>
                     <br>
                     <div class="col-lg-4">
@@ -130,7 +125,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div id="features">
             <div class="container">
                 <div class="row">
-                    <h1 class="centered">{{ trans('adminlte_lang::message.whatnew') }}</h1>
+                    <h1 class="centered">{{ trans('message.whatnew') }}</h1>
                     <br>
                     <br>
                     <div class="col-lg-6 centered">
@@ -243,10 +238,10 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
                 <div class="col-lg-5">
                     <h3>{{ trans('adminlte_lang::message.address') }}</h3>
                     <p>
-                        Av. Greenville 987,<br/>
-                        New York,<br/>
-                        90873<br/>
-                        United States
+                        Avenida de ejemplo,<br/>
+                        Patzun,<br/>
+                        7839 8044<br/>
+                        Patzun
                     </p>
                 </div>
 
@@ -276,14 +271,6 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <footer>
         <div id="c">
             <div class="container">
-                <p>
-                    <a href="https://github.com/acacha/adminlte-laravel"></a><b>admin-lte-laravel</b></a>. {{ trans('adminlte_lang::message.descriptionpackage') }}.<br/>
-                    <strong>Copyright &copy; 2015 <a href="http://acacha.org">Acacha.org</a>.</strong> {{ trans('adminlte_lang::message.createdby') }} <a href="http://acacha.org/sergitur">Sergi Tur Badenas</a>. {{ trans('adminlte_lang::message.seecode') }} <a href="https://github.com/acacha/adminlte-laravel">Github</a>
-                    <br/>
-                    AdminLTE {{ trans('adminlte_lang::message.createdby') }} Abdullah Almsaeed <a href="https://almsaeedstudio.com/">almsaeedstudio.com</a>
-                    <br/>
-                    Pratt Landing Page {{ trans('adminlte_lang::message.createdby') }} <a href="http://www.blacktie.co">BLACKTIE.CO</a>
-                </p>
 
             </div>
         </div>

@@ -23,7 +23,15 @@
 						</div>
 					</div>
 					<div class="box-body">
-						{{ trans('adminlte_lang::message.logged') }}. Start creating your amazing application!
+						@role('Administradora')
+							<p>This is visible to users with the Administradora role.</p>
+						@endrole
+						@role('Directora')
+						<p>This is visible to users with the Directora role.</p>
+						@endrole
+						@role('Catedratico')
+						<p>This is visible to users with the Catedratico role.</p>
+						@endrole
 					</div>
 					<!-- /.box-body -->
 				</div>

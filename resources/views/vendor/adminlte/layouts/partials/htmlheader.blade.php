@@ -34,4 +34,5 @@
             echo json_encode($trans);
         @endphp
     </script>
+    @yield('head_scripts_styles')
 </head>

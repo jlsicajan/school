@@ -25,4 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/directora/profesores', 'Principal\ProfessorController@index');
     Route::get('/directora/administradores', 'Principal\AdminsController@index');
     Route::get('/directora/grados', 'Principal\GradesController@index');
+
+    Route::get('/datatable/profesores', 'Principal\ProfessorController@getProfessors')->name('datatable.professors');
+    Route::post('/save/professor', ['as'   => 'save.professor.data',
+                                   'uses' => 'Principal\ProfessorController@save']);
 });

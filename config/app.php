@@ -181,7 +181,7 @@ return [
         */
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
-
+        Yajra\Datatables\DatatablesServiceProvider::class,
     ],
 
     /*

@@ -60,6 +60,7 @@ desired effect
 @section('scripts')
     @include('adminlte::layouts.partials.scripts')
 @show
+@yield('body_scripts_styles')
 
 </body>
 </html>

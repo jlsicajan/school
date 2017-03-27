@@ -22,4 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
+    Route::get('/directora/profesores', 'Principal\ProfessorController@index');
+    Route::get('/directora/administradores', 'Principal\AdminsController@index');
+    Route::get('/directora/grados', 'Principal\GradesController@index');
 });

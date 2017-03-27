@@ -41,7 +41,9 @@ desired effect
     <div class="content-wrapper">
 
         @include('adminlte::layouts.partials.contentheader')
-
+        @role('Directora')
+            @include('views_by_role.principal.sidebar.home_sidebar.sidebar')
+        @endrole
         <!-- Main content -->
         <section class="content">
             <!-- Your Page Content Here -->

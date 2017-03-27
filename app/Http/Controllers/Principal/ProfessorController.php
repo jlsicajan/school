@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use Yajra\Datatables\Facades\Datatables;
 
 class ProfessorController extends Controller
 {
@@ -27,7 +28,10 @@ class ProfessorController extends Controller
        $professor->email = Input::get('email');
        $professor->password = bcrypt('clave');
        $professor->save();
-       $professor->attachRole(Role::where('name', '=', 'Catedratico')->get());
+       $professor->attachRole(Role::where('name', '=', 'Catedratico')->first());
+
+        $data = array('message' => 'Dato ingresado correctamente.');
+        return $data;
     }
 
     public function getProfessors(){

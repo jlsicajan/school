@@ -53,10 +53,10 @@
 	</div>
 @endsection
 @section('body_scripts_styles')
-    <script
-            src="https://code.jquery.com/jquery-3.2.1.js"
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
             integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
             crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" charset="UTF-8"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js" charset="UTF-8"></script>
     <script>

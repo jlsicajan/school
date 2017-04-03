@@ -26,7 +26,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/directora/administradores', 'Principal\AdminsController@index');
     Route::get('/directora/grados', 'Principal\GradesController@index');
 
+    //to save and get data
+    //------------------------------------------------------------------------------------------------------------------
     Route::get('/datatable/profesores', 'Principal\ProfessorController@getProfessors')->name('datatable.professors');
     Route::post('/save/professor', ['as'   => 'save.professor.data',
                                    'uses' => 'Principal\ProfessorController@save']);
+
+    Route::get('/datatable/grados', 'Principal\GradesController@getGrades')->name('datatable.grades');
+    Route::post('/save/professor', ['as'   => 'save.grade.data',
+                                    'uses' => 'Principal\GradesController@save']);
+    //------------------------------------------------------------------------------------------------------------------
 });

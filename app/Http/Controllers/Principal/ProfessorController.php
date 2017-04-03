@@ -35,7 +35,11 @@ class ProfessorController extends Controller
     }
 
     public function getProfessors(){
-        $professors = User::select(['name', 'email']);
+        $professors = User::join('role_user', 'users.id', '=', 'role_user.user_id')
+            ->join('roles', 'role_user.role_id', '=', 'roles.id')
+            ->where('roles.name', '=', 'Catedratico')
+            ->select('users.name', 'users.email')
+            ->get();
 
         return Datatables::of($professors)->make(true);
     }

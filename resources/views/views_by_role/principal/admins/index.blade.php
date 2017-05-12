@@ -26,3 +26,8 @@
 		</div>
 	</div>
 @endsection
+@section('body_scripts_styles')
+	<script type="text/javascript">
+        $('#administrador_option').addClass('active').siblings().removeClass('active');
+	</script>
+@endsection

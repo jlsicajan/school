@@ -60,6 +60,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" charset="UTF-8"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js" charset="UTF-8"></script>
     <script>
+        $('#professor_option').addClass('active').siblings().removeClass('active');
         $(document).ready(function () {
             oTable = $('#professor_datatable').DataTable({
                 "processing": true,

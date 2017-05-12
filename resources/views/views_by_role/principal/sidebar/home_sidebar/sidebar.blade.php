@@ -22,9 +22,9 @@
         <ul class="sidebar-menu">
             <li class="header"><span>DIRECTORA</span></li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('/directora/profesores') }}"><i class='fa fa-address-card'></i><span> Profesores</span></a></li>
-            <li><a href="{{ url('/directora/grados') }}"><i class='fa fa-signal'></i><span> Grados</span></a></li>
-            <li><a href="{{ url('directora/administradores') }}"><i class='fa fa-server'></i><span> Administradores</span></a></li>
+            <li id="professor_option"><a href="{{ url('/directora/profesores') }}"><i class='fa fa-address-card'></i><span> Profesores</span></a></li>
+            <li id="grades_option"><a href="{{ url('/directora/grados') }}"><i class='fa fa-signal'></i><span> Grados</span></a></li>
+            <li id="administrador_option"><a href="{{ url('directora/administradores') }}"><i class='fa fa-server'></i><span> Administradores</span></a></li>
 
         </ul><!-- /.sidebar-menu -->
     </section>

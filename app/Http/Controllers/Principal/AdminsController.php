@@ -24,6 +24,7 @@ class AdminsController extends Controller
         $grades = new Administrator();
         $grades->name = strtoupper(Input::get('name'));
         $grades->status = strtoupper(Input::get('status'));
+        $grades->email = strtoupper(Input::get('email'));
         $grades->save();
 
         $data = array('message' => 'Administrador ingresado correctamente.');
@@ -35,7 +36,7 @@ class AdminsController extends Controller
 
         $data = [];
         foreach ($administrators as $administrator){
-            array_push($data, ['DT_RowClass' => 'tr-content', 'DT_RowId' => $administrator->id, $administrator->name, $administrator->status]);
+            array_push($data, ['DT_RowClass' => 'tr-content', 'DT_RowId' => $administrator->id, $administrator->name, $administrator->email, $administrator->status]);
         }
         return ['data' => $data];
     }

@@ -35,5 +35,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/datatable/grados', 'Principal\GradesController@getGrades')->name('datatable.grades');
     Route::post('/save/grades', ['as'   => 'save.grade.data',
                                     'uses' => 'Principal\GradesController@save']);
+
+    Route::get('/datatable/administradores', 'Principal\AdminsController@getAdministrators')->name('datatable.administrators');
+    Route::post('/save/administrators', ['as'   => 'save.administrator.data',
+                                    'uses' => 'Principal\AdminsController@save']);
     //------------------------------------------------------------------------------------------------------------------
 });

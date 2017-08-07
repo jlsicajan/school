@@ -61,6 +61,9 @@
         $('#grades_option').addClass('active').siblings().removeClass('active');
         $(document).ready(function () {
             oTable = $('#datatable').DataTable({
+                "language": {
+                    "url": "/datatable/language/spanish.json"
+                },
                 "processing": true,
                 "serverSide": true,
                 "ajax": "{{ route('datatable.grades') }}",

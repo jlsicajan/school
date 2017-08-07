@@ -66,6 +66,9 @@
                 "processing": true,
                 "serverSide": true,
                 "ajax": "{{ route('datatable.professors') }}",
+                "language": {
+                    "url": "/datatable/language/spanish.json"
+                },
                 "columns": [
                     { "data": "name" },
                     { "data": "email" },

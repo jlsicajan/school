@@ -68,6 +68,9 @@
         $('#administrador_option').addClass('active').siblings().removeClass('active');
         $(document).ready(function () {
             var table = $('#datatable').DataTable({
+                "language": {
+                    "url": "/datatable/language/spanish.json"
+                },
                 "ajax": "{{ route('datatable.administrators') }}",
             });
 

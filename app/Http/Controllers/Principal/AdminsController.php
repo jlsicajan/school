@@ -36,7 +36,12 @@ class AdminsController extends Controller
 
         $data = [];
         foreach ($administrators as $administrator){
-            array_push($data, ['DT_RowClass' => 'tr-content', 'DT_RowId' => $administrator->id, $administrator->name, $administrator->email, $administrator->status]);
+            if($administrator->status == 1){
+                $status = '<span class="label label-success">Activo</span>';
+            }else{
+                $status = '<span class="label label-danger">Inactivo</span>';
+            }
+            array_push($data, ['DT_RowClass' => 'tr-content', 'DT_RowId' => $administrator->id, $administrator->name, $administrator->email, $status]);
         }
         return ['data' => $data];
     }

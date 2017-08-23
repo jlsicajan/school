@@ -23,13 +23,13 @@ class AdminsController extends Controller
     }
 
     public function save(){
-        $professor = new User();
-        $professor->name = Input::get('name');
-        $professor->email = Input::get('email');
-        $professor->status = strtoupper(Input::get('status'));
-        $professor->password = bcrypt('clave');
-        $professor->save();
-        $professor->attachRole(Role::where('name', '=', 'Administradora')->first());
+        $administrator = new User();
+        $administrator->name = Input::get('name');
+        $administrator->email = Input::get('email');
+        $administrator->status = strtoupper(Input::get('status'));
+        $administrator->password = bcrypt('clave');
+        $administrator->save();
+        $administrator->attachRole(Role::where('name', '=', 'Administradora')->first());
 
         $data = array('message' => 'Administrador ingresado correctamente.');
         return $data;

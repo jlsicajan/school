@@ -31,6 +31,10 @@
                                     <label for="semester">Correo</label>
                                     <input type="email" class="form-control" name="email" id="email" required/>
                                 </div>
+                                <div class="form-group">
+                                    <label for="status">Profesor activo</label>
+                                    <input type="checkbox" name="status" id="status">
+                                </div>
                                 <input type="submit" class="btn btn-primary" value="Guardar"/>
                             </form>
                         </div>
@@ -40,6 +44,7 @@
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Correo</th>
+                                    <th>Estado</th>
                                 </tr>
                                 </thead>
                             </table>
@@ -77,6 +82,8 @@
                     data: {
                         name: $('input#name').val(),
                         email: $('input#email').val(),
+                        status: +$('input#status').is( ':checked' ),
+
                         _token: CSRF_TOKEN
                     },
                     success: function (data) {

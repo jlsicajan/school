@@ -26,6 +26,7 @@ class ProfessorController extends Controller
        $professor = new User();
        $professor->name = Input::get('name');
        $professor->email = Input::get('email');
+       $professor->status = strtoupper(Input::get('status'));
        $professor->password = bcrypt('clave');
        $professor->save();
        $professor->attachRole(Role::where('name', '=', 'Catedratico')->first());
@@ -38,12 +39,17 @@ class ProfessorController extends Controller
         $professors = User::join('role_user', 'users.id', '=', 'role_user.user_id')
             ->join('roles', 'role_user.role_id', '=', 'roles.id')
             ->where('roles.name', '=', 'Catedratico')
-            ->select('users.id', 'users.name', 'users.email')
+            ->select('users.id', 'users.name', 'users.email', 'users.status')
             ->get();
 
         $data = [];
         foreach ($professors as $professor){
-            array_push($data, ['DT_RowClass' => 'tr-content', 'DT_RowId' => $professor->id, $professor->name, $professor->email]);
+            if($professor->status == 1){
+                $status = '<span class="label label-success">Activo</span>';
+            }else{
+                $status = '<span class="label label-danger">Inactivo</span>';
+            }
+            array_push($data, ['DT_RowClass' => 'tr-content', 'DT_RowId' => $professor->id, $professor->name, $professor->email, $status]);
         }
         return ['data' => $data];
     }

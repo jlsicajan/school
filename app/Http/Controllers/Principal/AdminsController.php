@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Principal;
 
 use App\Administrator;
+use App\Role;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
@@ -21,18 +23,24 @@ class AdminsController extends Controller
     }
 
     public function save(){
-        $grades = new Administrator();
-        $grades->name = strtoupper(Input::get('name'));
-        $grades->status = strtoupper(Input::get('status'));
-        $grades->email = strtoupper(Input::get('email'));
-        $grades->save();
+        $professor = new User();
+        $professor->name = Input::get('name');
+        $professor->email = Input::get('email');
+        $professor->status = strtoupper(Input::get('status'));
+        $professor->password = bcrypt('clave');
+        $professor->save();
+        $professor->attachRole(Role::where('name', '=', 'Administradora')->first());
 
         $data = array('message' => 'Administrador ingresado correctamente.');
         return $data;
     }
 
     public function getAdministrators(){
-        $administrators = Administrator::all();
+        $administrators = User::join('role_user', 'users.id', '=', 'role_user.user_id')
+            ->join('roles', 'role_user.role_id', '=', 'roles.id')
+            ->where('roles.name', '=', 'Administradora')
+            ->select('users.id', 'users.name', 'users.email', 'users.status')
+            ->get();
 
         $data = [];
         foreach ($administrators as $administrator){

@@ -62,18 +62,13 @@
     <script>
         $('#professor_option').addClass('active').siblings().removeClass('active');
         $(document).ready(function () {
-            oTable = $('#professor_datatable').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "ajax": "{{ route('datatable.professors') }}",
+            var table = $('#professor_datatable').DataTable({
                 "language": {
                     "url": "/datatable/language/spanish.json"
                 },
-                "columns": [
-                    { "data": "name" },
-                    { "data": "email" },
-                ]
+                "ajax": "{{ route('datatable.professors') }}",
             });
+
             var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             $('#form_professor').on('submit', function (e) {
                 $.ajax({
@@ -86,7 +81,7 @@
                     },
                     success: function (data) {
                         $('#form_professor').trigger("reset");
-                        oTable.ajax.reload(null, false);
+                        table.ajax.reload(null, false);
                     }
                 });
                 return false;

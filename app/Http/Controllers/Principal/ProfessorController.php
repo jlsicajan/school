@@ -38,9 +38,13 @@ class ProfessorController extends Controller
         $professors = User::join('role_user', 'users.id', '=', 'role_user.user_id')
             ->join('roles', 'role_user.role_id', '=', 'roles.id')
             ->where('roles.name', '=', 'Catedratico')
-            ->select('users.name', 'users.email')
+            ->select('users.id', 'users.name', 'users.email')
             ->get();
 
-        return Datatables::of($professors)->make(true);
+        $data = [];
+        foreach ($professors as $professor){
+            array_push($data, ['DT_RowClass' => 'tr-content', 'DT_RowId' => $professor->id, $professor->name, $professor->email]);
+        }
+        return ['data' => $data];
     }
 }

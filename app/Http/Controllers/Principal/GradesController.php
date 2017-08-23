@@ -33,6 +33,12 @@ class GradesController extends Controller
     public function getGrades(){
         $grades = Grade::all();
 
-        return Datatables::of($grades)->make(true);
+        $data = [];
+        foreach ($grades as $grade){
+            array_push($data, ['DT_RowClass' => 'tr-content', 'DT_RowId' => $grade->id, $grade->name]);
+        }
+        return ['data' => $data];
     }
+
+
 }

@@ -60,18 +60,13 @@
     <script>
         $('#grades_option').addClass('active').siblings().removeClass('active');
         $(document).ready(function () {
-            oTable = $('#datatable').DataTable({
+            var table = $('#datatable').DataTable({
                 "language": {
                     "url": "/datatable/language/spanish.json"
                 },
-                "processing": true,
-                "serverSide": true,
                 "ajax": "{{ route('datatable.grades') }}",
-                "columns": [
-                    {"data": "name"},
-
-                ],
             });
+
             var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             $('#form').on('submit', function (e) {
                 $.ajax({
@@ -83,7 +78,10 @@
                     },
                     success: function (data) {
                         $('#form').trigger("reset");
-                        oTable.ajax.reload(null, false);
+                        table.ajax.reload(null, false);
+                    },
+                    error: function(error){
+                        alert("hubo un problema contacte a su proveedor de servicio");
                     }
                 });
                 return false;
